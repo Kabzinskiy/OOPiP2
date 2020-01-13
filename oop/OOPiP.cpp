@@ -1,21 +1,21 @@
-#include <iostream>
+ï»¿#include <iostream>
 #include <iomanip>
 
 const int capacity=200;
 
 using namespace std;
 
-class arr {                                            // ñîçäàåì êëàññ arr
-	int arrX[capacity];                                // â íåì ñîçäàåì ìàññèâ ñ ìàêñèìàëüíîé âåëè÷èíîé
-	int realSize;                                      // ñîçäàåì ïåðåìåííóþ äëÿ íàñòîÿùåãî ðàçìåðà
+class arr {                                            // ÑÐ¾Ð·Ð´Ð°ÐµÐ¼ ÐºÐ»Ð°ÑÑ arr
+	int arrX[capacity];                                // Ð² Ð½ÐµÐ¼ ÑÐ¾Ð·Ð´Ð°ÐµÐ¼ Ð¼Ð°ÑÑÐ¸Ð² Ñ Ð¼Ð°ÐºÑÐ¸Ð¼Ð°Ð»ÑŒÐ½Ð¾Ð¹ Ð²ÐµÐ»Ð¸Ñ‡Ð¸Ð½Ð¾Ð¹
+	int realSize;                                      // ÑÐ¾Ð·Ð´Ð°ÐµÐ¼ Ð¿ÐµÑ€ÐµÐ¼ÐµÐ½Ð½ÑƒÑŽ Ð´Ð»Ñ Ð½Ð°ÑÑ‚Ð¾ÑÑ‰ÐµÐ³Ð¾ Ñ€Ð°Ð·Ð¼ÐµÑ€Ð°
 
-	void full_rand();                                  // ïðîòîòèïû ôóíêöèé, î ôóíêöèÿõ ÷èòàéòå íèæå
+	void full_rand();                                  // Ð¿Ñ€Ð¾Ñ‚Ð¾Ñ‚Ð¸Ð¿Ñ‹ Ñ„ÑƒÐ½ÐºÑ†Ð¸Ð¹, Ð¾ Ñ„ÑƒÐ½ÐºÑ†Ð¸ÑÑ… Ñ‡Ð¸Ñ‚Ð°Ð¹Ñ‚Ðµ Ð½Ð¸Ð¶Ðµ
 	void enterSize();                             
 	void delPos(int);
 	void add_0(int);
 public:
 	void printArr();
-	arr();                                             // êîíñòðóêòîðû ñ ïàðìåòðàìè è áåç ïàðàìåòðîâ
+	arr();                                             // ÐºÐ¾Ð½ÑÑ‚Ñ€ÑƒÐºÑ‚Ð¾Ñ€Ñ‹ Ñ Ð¿Ð°Ñ€Ð¼ÐµÑ‚Ñ€Ð°Ð¼Ð¸ Ð¸ Ð±ÐµÐ· Ð¿Ð°Ñ€Ð°Ð¼ÐµÑ‚Ñ€Ð¾Ð²
 	arr(int);
 	void multiSeven();
 	void oddElem();
@@ -34,7 +34,7 @@ arr::arr(int size){
 
 
 
-void arr::enterSize(){                                                //ôóíêöèÿ äëÿ ââîäà ðåàëüíîãî ðàçìåðà ìàññèâà
+void arr::enterSize(){                                                //Ñ„ÑƒÐ½ÐºÑ†Ð¸Ñ Ð´Ð»Ñ Ð²Ð²Ð¾Ð´Ð° Ñ€ÐµÐ°Ð»ÑŒÐ½Ð¾Ð³Ð¾ Ñ€Ð°Ð·Ð¼ÐµÑ€Ð° Ð¼Ð°ÑÑÐ¸Ð²Ð°
 	while (realSize > 100 || realSize < 1)
 	{
 		cout << "Enter the arr size from 1 to 100." << endl;
@@ -43,7 +43,7 @@ void arr::enterSize(){                                                //ôóíêöèÿ 
 	
 }         
 
-void arr::full_rand(){                                          //ôóíêöèÿ çàïîëíåíèÿ ïñåâäîñëó÷àéíûìè ÷èñëàìè
+void arr::full_rand(){                                          //Ñ„ÑƒÐ½ÐºÑ†Ð¸Ñ Ð·Ð°Ð¿Ð¾Ð»Ð½ÐµÐ½Ð¸Ñ Ð¿ÑÐµÐ²Ð´Ð¾ÑÐ»ÑƒÑ‡Ð°Ð¹Ð½Ñ‹Ð¼Ð¸ Ñ‡Ð¸ÑÐ»Ð°Ð¼Ð¸
 	for (int i = 0; i < capacity; i++)
 	{
 		arrX[i] = rand();
@@ -51,14 +51,14 @@ void arr::full_rand(){                                          //ôóíêöèÿ çàïîëí
 
 }
 
-void arr::printArr(){                                              // ôóíêöèÿ âûâîäà ìàññèâà â êîíñîëü
+void arr::printArr(){                                              // Ñ„ÑƒÐ½ÐºÑ†Ð¸Ñ Ð²Ñ‹Ð²Ð¾Ð´Ð° Ð¼Ð°ÑÑÐ¸Ð²Ð° Ð² ÐºÐ¾Ð½ÑÐ¾Ð»ÑŒ
 	for (int i = 0; i < realSize; i++){
 		cout << setw(3) << (i+1) << "   " << arrX[i] << endl;
 	}
 	cout << endl;
 }
 
-void arr::add_0(int iterator){                               //ôóíêöèÿ äîáàâëåíèÿ 0 â ìàññèâ
+void arr::add_0(int iterator){                               //Ñ„ÑƒÐ½ÐºÑ†Ð¸Ñ Ð´Ð¾Ð±Ð°Ð²Ð»ÐµÐ½Ð¸Ñ 0 Ð² Ð¼Ð°ÑÑÐ¸Ð²
 	realSize++;
 	for (int i = realSize; i > iterator; i--)
 	{
@@ -67,7 +67,7 @@ void arr::add_0(int iterator){                               //ôóíêöèÿ äîáàâëåíè
 	arrX[iterator] = 0;
 }
 
-void arr::delPos(int iterator){                              //ôóíêöèÿ óäàëåíèÿ ìàññèâà
+void arr::delPos(int iterator){                              //Ñ„ÑƒÐ½ÐºÑ†Ð¸Ñ ÑƒÐ´Ð°Ð»ÐµÐ½Ð¸Ñ Ð¼Ð°ÑÑÐ¸Ð²Ð°
 	if (iterator >= 0 && iterator < realSize)
 	{
 		for (int i = iterator; i < realSize; i++)
@@ -78,7 +78,7 @@ void arr::delPos(int iterator){                              //ôóíêöèÿ óäàëåíèÿ 
 	}
 }
 
-void arr::multiSeven(){                                //ôóíêöèÿ ïðîâåðêè íà êðàòíîñòü 7 è ïîñëåäóþùåãî óäàëåíèÿ ýëåìåíòà
+void arr::multiSeven(){                                //Ñ„ÑƒÐ½ÐºÑ†Ð¸Ñ Ð¿Ñ€Ð¾Ð²ÐµÑ€ÐºÐ¸ Ð½Ð° ÐºÑ€Ð°Ñ‚Ð½Ð¾ÑÑ‚ÑŒ 7 Ð¸ Ð¿Ð¾ÑÐ»ÐµÐ´ÑƒÑŽÑ‰ÐµÐ³Ð¾ ÑƒÐ´Ð°Ð»ÐµÐ½Ð¸Ñ ÑÐ»ÐµÐ¼ÐµÐ½Ñ‚Ð°
 	int i = 0;
 	while (i < realSize)
 	{
@@ -96,7 +96,7 @@ void arr::multiSeven(){                                //ôóíêöèÿ ïðîâåðêè íà êðà
 	}
 }
 
-void arr::oddElem(){                                //ôóíêöèÿ ïðîâåðÿåò ýëóìåíòû íà ÷åòíîñòü è ñòàâèò ïîñëå íèõ 0
+void arr::oddElem(){                                //Ñ„ÑƒÐ½ÐºÑ†Ð¸Ñ Ð¿Ñ€Ð¾Ð²ÐµÑ€ÑÐµÑ‚ ÑÐ»ÑƒÐ¼ÐµÐ½Ñ‚Ñ‹ Ð½Ð° Ñ‡ÐµÑ‚Ð½Ð¾ÑÑ‚ÑŒ Ð¸ ÑÑ‚Ð°Ð²Ð¸Ñ‚ Ð¿Ð¾ÑÐ»Ðµ Ð½Ð¸Ñ… 0
 	for (int i = 0; i < realSize; i++)
 	{
 		if (arrX[i]%2)
@@ -110,11 +110,11 @@ void arr::oddElem(){                                //ôóíêöèÿ ïðîâåðÿåò ýëóìåíòû
 
 
 int main(){
-	arr arrX;                 //èíèöèàëèçèðóåì îáúåêò
-	arrX.printArr();          //âûâîäèì â êîíñîëü
-	arrX.multiSeven();        //ïðîâåðÿåì íà êðàòíîñòü ñåìè
-	arrX.oddElem();           //ïðîâåðêà íà ÷åòíîñòü
-	arrX.printArr();          //âûâîäèì â êîíñîëü
+	arr arrX;                 //Ð¸Ð½Ð¸Ñ†Ð¸Ð°Ð»Ð¸Ð·Ð¸Ñ€ÑƒÐµÐ¼ Ð¾Ð±ÑŠÐµÐºÑ‚
+	arrX.printArr();          //Ð²Ñ‹Ð²Ð¾Ð´Ð¸Ð¼ Ð² ÐºÐ¾Ð½ÑÐ¾Ð»ÑŒ
+	arrX.multiSeven();        //Ð¿Ñ€Ð¾Ð²ÐµÑ€ÑÐµÐ¼ Ð½Ð° ÐºÑ€Ð°Ñ‚Ð½Ð¾ÑÑ‚ÑŒ ÑÐµÐ¼Ð¸
+	arrX.oddElem();           //Ð¿Ñ€Ð¾Ð²ÐµÑ€ÐºÐ° Ð½Ð° Ñ‡ÐµÑ‚Ð½Ð¾ÑÑ‚ÑŒ
+	arrX.printArr();          //Ð²Ñ‹Ð²Ð¾Ð´Ð¸Ð¼ Ð² ÐºÐ¾Ð½ÑÐ¾Ð»ÑŒ
 	system("pause");
 	return 0;
 }
